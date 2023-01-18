@@ -9,6 +9,6 @@ class Post < ApplicationRecord
   end
 
   def post_comments
-    Comment.where('post_id = ?', id).limit(5)
+    Comment.where('post_id = ?', id).order(updated_at: :desc).limit(5)
   end
 end
