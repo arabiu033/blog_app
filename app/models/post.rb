@@ -3,12 +3,12 @@ class Post < ApplicationRecord
   has_many :comments
   belongs_to :user
 
-  def updateUserPostsCounter
-    count = Post.where('user_id = ?', self.user_id).count
-    User.find(self.user_id).update(posts_counter: count)
+  def update_user_posts_counter
+    count = Post.where('user_id = ?', user_id).count
+    User.find(user_id).update(posts_counter: count)
   end
 
-  def getPostComments
-    Comment.where('post_id = ?', self.id).limit(5)
+  def post_comments
+    Comment.where('post_id = ?', id).limit(5)
   end
 end
