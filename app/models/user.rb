@@ -4,6 +4,6 @@ class User < ApplicationRecord
   has_many :comments
 
   def user_posts
-    Post.where('user_id = ?', id).limit(3)
+    Post.where('owner_id = ?', id).limit(3)
   end
 end
