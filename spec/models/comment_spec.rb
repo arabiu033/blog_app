@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-
   it 'should update post likes counter' do
     user = User.create(name: 'Korra', photo: '', bio: '', posts_counter: 0)
     pos = Post.create(author: user, title: 'Humanity', text: 'Yello Humanity', comments_counter: 0, likes_counter: 0)

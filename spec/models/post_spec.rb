@@ -15,14 +15,14 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'comments counter should be 0 or above' do 
+  it 'comments counter should be 0 or above' do
     user = User.create(name: 'Korra', photo: '', bio: '', posts_counter: 0)
     subject.update(author: user)
     subject.comments_counter = nil
     expect(subject).to_not be_valid
   end
 
-  it 'likes counter should be 0 or above' do 
+  it 'likes counter should be 0 or above' do
     user = User.create(name: 'Korra', photo: '', bio: '', posts_counter: 0)
     subject.update(author: user)
     subject.likes_counter = nil
@@ -34,9 +34,9 @@ RSpec.describe Post, type: :model do
     subject.update(author: user)
     subject.save
     expect(subject.post_comments.length).to eql 0
-    Comment.create(post: subject, author: user, text: 'Hi Tom!' )
+    Comment.create(post: subject, author: user, text: 'Hi Tom!')
     expect(subject.post_comments.length).to eql 1
-    Comment.create(post: subject, author: user, text: 'Hi Jerry!' )
+    Comment.create(post: subject, author: user, text: 'Hi Jerry!')
     expect(subject.post_comments.length).to eql 2
   end
 end
