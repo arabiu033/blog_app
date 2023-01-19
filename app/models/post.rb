@@ -4,8 +4,8 @@ class Post < ApplicationRecord
   belongs_to :user
 
   def update_user_posts_counter
-    count = Post.where('owner_id = ?', user_id).count
-    User.find(user_id).update(posts_counter: count)
+    count = Post.where('owner_id = ?', owner_id).count
+    User.find(owner_id).update(posts_counter: count)
   end
 
   def post_comments
