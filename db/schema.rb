@@ -18,9 +18,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_111215) do
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "owner_id", null: false
+    t.bigint "author_id", null: false
     t.bigint "post_id", null: false
-    t.index ["owner_id"], name: "index_comments_on_owner_id"
+    t.index ["author_id"], name: "index_comments_on_author_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
@@ -28,8 +28,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_111215) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "post_id", null: false
-    t.bigint "owner_id", null: false
-    t.index ["owner_id"], name: "index_likes_on_owner_id"
+    t.bigint "author_id", null: false
+    t.index ["author_id"], name: "index_likes_on_author_id"
     t.index ["post_id"], name: "index_likes_on_post_id"
   end
 
@@ -40,8 +40,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_111215) do
     t.integer "likes_counter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "owner_id", null: false
-    t.index ["owner_id"], name: "index_posts_on_owner_id"
+    t.bigint "author_id", null: false
+    t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,8 +54,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_111215) do
   end
 
   add_foreign_key "comments", "posts"
-  add_foreign_key "comments", "users", column: "owner_id"
+  add_foreign_key "comments", "users", column: "author_id"
   add_foreign_key "likes", "posts"
-  add_foreign_key "likes", "users", column: "owner_id"
-  add_foreign_key "posts", "users", column: "owner_id"
+  add_foreign_key "likes", "users", column: "author_id"
+  add_foreign_key "posts", "users", column: "author_id"
 end
