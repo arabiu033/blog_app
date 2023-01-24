@@ -1,10 +1,10 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe "Posts", :type => :request do
+RSpec.describe 'Posts', type: :request do
   describe 'GET #index' do
-    before(:example) { get '/users/:user_id/posts' }  # get(:index)
+    before(:example) { get '/users/:user_id/posts' } # get(:index)
 
-    it "is a success" do
+    it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
 
@@ -12,15 +12,15 @@ RSpec.describe "Posts", :type => :request do
       expect(response).to render_template(:index)
     end
 
-    it "renders a particular content" do
-      expect(response.body).to include("Here is a list of posts for a given user")
+    it 'renders a particular content' do
+      expect(response.body).to include('Here is a list of posts for a given user')
     end
   end
 
   describe 'GET #show' do
-    before(:example) { get '/users/:user_id/posts/:id' }  # get(:show)
+    before(:example) { get '/users/:user_id/posts/:id' } # get(:show)
 
-    it "is a success" do
+    it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
 
@@ -28,9 +28,8 @@ RSpec.describe "Posts", :type => :request do
       expect(response).to render_template('show')
     end
 
-    it "renders a particular content" do
-      expect(response.body).to include("Here is a full detail about a user post")
+    it 'renders a particular content' do
+      expect(response.body).to include('Here is a full detail about a user post')
     end
-     
   end
 end
