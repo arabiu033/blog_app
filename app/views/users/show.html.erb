@@ -1,1 +1,3 @@
-<h2>Here is a details information about a user</h2>
+<%= render "partials/profile", user: @user %>
+<%= render "partials/recent_posts", user: @user %>
+<button><%= link_to "See all posts", user_posts_path(@user) %></button>
