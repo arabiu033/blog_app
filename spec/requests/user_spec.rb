@@ -2,9 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   describe 'GET #index' do
-    before(:example) { get '/users' } # get(:index)
+    before(:example) { get users_path } # get(:index)
 
     it 'is a success' do
+      create(:user)
       expect(response).to have_http_status(:ok)
     end
 
