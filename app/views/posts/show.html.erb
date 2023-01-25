@@ -1,1 +1,8 @@
-<h2>Here is a full detail about a user post</h2>
+  <p>post by <%= @user.name %></p>
+  <p>Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%></p>
+  <p><%= @post.text%></p>
+  <div>
+    <% @comment.each do |comment| %>
+      <p><%= comment.author.name%> : <%= comment.text %></p>
+    <% end %>
+  </div>
