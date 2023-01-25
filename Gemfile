@@ -73,4 +73,6 @@ group :test do
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'faker'
+  gem "factory_girl_rails", "~> 4.0"
 end
