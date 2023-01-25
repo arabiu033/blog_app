@@ -1,0 +1,12 @@
+<section class='posts'>
+  <%@posts.each_with_index do |post, i| %>
+    <p><%= link_to "post #{i+1}", user_post_path(@user, post) %></p>
+    <p><%= post.text%></p>
+    <p>Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%></p>
+    <div>
+      <% post.post_comments.each do |comment| %>
+        <p><%= comment.author.name%> : <%= comment.text %></p>
+      <% end %>
+    </div>
+  <% end %>
+</section>
