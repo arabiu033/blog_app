@@ -14,14 +14,14 @@ a.times do
 end
 
 User.all.each do |user|
-  a = Random.rand(0..5)
+  a = Random.rand(3..8)
   a.times do
     FactoryGirl.create(:post, :author => user)
   end
 end
 
 Post.all.each do |post|
-  a = Random.rand(0..5)
+  a = Random.rand(3..8)
   a.times do
     FactoryGirl.create(:comment, :author => post.author, :post => post)
     FactoryGirl.create(:like, :author => post.author, :post => post)
