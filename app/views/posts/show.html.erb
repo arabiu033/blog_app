@@ -1,8 +1,12 @@
-  <p>post by <%= @user.name %></p>
-  <p>Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%></p>
+<section class='posts'>
+  <div class='post'>
+    <p>post #<%= @num %> by <%= @user.name %></p>
+    <p>Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%></p>
+  </div>
   <p><%= @post.text%></p>
   <div>
     <% @comment.each do |comment| %>
-      <p><%= comment.author.name%> : <%= comment.text %></p>
+      <p class='comment'><strong><%= comment.author.name%></strong>: <%= comment.text.split(' ')[0] %></p>
     <% end %>
   </div>
+</section>

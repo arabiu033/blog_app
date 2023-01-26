@@ -1,3 +1,3 @@
-<%= render "partials/profile_head", user: @user %>
+<%= render "partials/user", user: @user %>
 <%= render "partials/all_posts", user: @user %>
-<button><%= link_to "Pagination", user_posts_path(@user) %></button>
+<button class='see-posts'><%= link_to "Pagination", user_posts_path(@user) %></button>
