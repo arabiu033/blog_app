@@ -13,20 +13,19 @@ class PostsController < ApplicationController
 
   def new
     @new_post = Post.new
-    @user = create_user
   end
 
   def create
-    @new_post = Post.new(parameters);
+    @new_post = Post.new(parameters)
     if @new_post.save
-      flash[:success] = "Post saved successfully"
-      redirect_to users_path
+      redirect_to users_path, success: 'Post saved successfully'
     else
-      render :new
+      render :new, notice: 'Error: Post could not be saved'
     end
   end
 
   private
+
   def parameters
     para = params.require(:post).permit(:title, :text)
     para[:comments_counter] = 0
