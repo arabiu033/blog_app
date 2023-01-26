@@ -1,0 +1,9 @@
+<%= render 'partials/flashes' %>
+<h1>New Comment</h1>
+<%= form_with model: @comment, url: user_post_comments_path do |form| %>
+  <div>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </div>
+  <%= form.submit "Add new comment" %>
+<% end %>
