@@ -1,7 +1,7 @@
 <article class='user'>
-  <img src="https://images.unsplash.com/photo-1560365163-3e8d64e762ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHNtaWxpbmclMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"  alt="<%= user.name %> photo" style="height: 250px; object-fit: cover">
-  <div>
-    <h2><%= link_to user.name, user_path(user) %></h2>
-    <p>Number of posts: <%= user.posts_counter%></p>
+  <img src=<%= user.photo %>  alt="<%= user.name %> photo" class='photo'>
+  <div class='user-name'>
+    <h2><%= link_to user.name.split(' ')[-1], user_path(user) %></h2>
+    <p class='num_of_posts'>Number of posts: <%= user.posts_counter%></p>
   </div>
 </article>
