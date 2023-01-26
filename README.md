@@ -35,13 +35,13 @@ After you're finished please remove all the comments and instructions!
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  <!-- - [Run tests](#run-tests) -->
+  - [Run tests](#run-tests)
   <!-- - [Deployment](#triangular_flag_on_post-deployment) -->
 - [👥 Authors](#authors)
-<!-- - [🔭 Future Features](#future-features) -->
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
-<!-- - [🙏 Acknowledgements](#acknowledgements)
+- [🙏 Acknowledgements](#acknowledgements)
 - [❓ FAQ](#faq) -->
 - [📝 License](#license)
 
@@ -119,9 +119,6 @@ Then run the command example bellow to install rails.-
 
 Clone this repository to your desired folder:
 
-
-Example commands:
-
 ```sh
   cd my-folder
   git clone https://github.com/arabiu033/blog_app/
@@ -131,9 +128,6 @@ Example commands:
 ### Install
 
 Install this project with:
-
-
-Example command:
 
 ```sh
   cd blog_app
@@ -146,23 +140,52 @@ Example command:
 To run the project, execute the following command:
 
 
-Example command:
+### Database
+To drop database 
 
+```sh
+rake db:drop
+```
+
+To create database
+
+```sh
+rake db:create
+```
+
+To migrate database
+```sh
+rake db:migrate
+```
+
+To run the server
 ```sh
   rails server
 ```
 
-<!-- ### Run tests
+### Run Test
+To run app test. run the following commad:
+
+```sh
+rspec
+```
+
+### Run Linters
 
 To run tests, run the following command:
 
-<!--
-Example command:
+```sh
+rubocop
+```
+
+OR
 
 ```sh
-  bin/rails test test/models/article_test.rb
-```
---->
+rubocop -a`
+``` 
+
+**it will automatically correct the errors** 
+-
 <!--
 ### Deployment
 
@@ -192,16 +215,16 @@ Example:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
-<!--
+
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
+> In upcoming weeks I will add some features as mentioned below
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **Authentication and Authorization**
+- [ ] **API & Documentation**
+- [ ] **High UI**
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 
@@ -217,42 +240,22 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project, kindly give it a star ⭐️
+If you like this project then please give a ⭐️ and also share your feedback using github_issues.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGEMENTS -->
-<!--
+
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
+❤️ [RoR Documentation](https://guides.rubyonrails.org)
 
-I would like to thank...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
-<!-- FAQ (optional) -->
-<!--
-## ❓ FAQ <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./MIT.md) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

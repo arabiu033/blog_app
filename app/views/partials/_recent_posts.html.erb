@@ -1,0 +1,7 @@
+  <%@user.user_posts.each_with_index do |post, i| %>
+  <div class='posts'>
+    <p>post #<%= i+1 %></p>
+    <p><%= post.text%></p>
+    <p class='num_of_posts'>Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%></p>
+  </div>
+  <% end %>
