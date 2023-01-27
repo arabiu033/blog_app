@@ -1,3 +1,4 @@
+<%= render 'partials/flashes' %>
 <%= render "partials/user", user: @user %>
 <%= render "partials/all_posts", user: @user %>
 <button class='see-posts'><%= link_to "Pagination", user_posts_path(@user) %></button>

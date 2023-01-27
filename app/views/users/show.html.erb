@@ -1,3 +1,6 @@
 <%= render "partials/profile", user: @user %>
 <%= render "partials/recent_posts", user: @user %>
-<button class='see-posts'><%= link_to "See all posts", user_posts_path(@user) %></button>
+<div class='btns'>
+  <button class='see-posts'><%= link_to "See all posts", user_posts_path(@user) %></button>
+  <button class='see-posts'><%= link_to "Create a post", new_user_post_path(@user) %></button>
+</div>
