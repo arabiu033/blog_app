@@ -1,6 +1,6 @@
 <section class='posts'>
   <%@posts.each_with_index do |post, i| %>
-    <p class='full-post'><%= link_to "post #{i+1}", user_post_path(@user, post, :num => i+1) %></p>
+    <p class='full-post'><%= link_to post.title, user_post_path(@user, post) %></p>
     <p><%= post.text%></p>
     <p class='num_of_posts'>Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%></p>
     <div>
