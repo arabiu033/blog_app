@@ -15,6 +15,5 @@ class Post < ApplicationRecord
 
   def post_comments
     Comment.includes(:author, :post).order(updated_at: :desc).limit(5)
-    # Comment.where('post_id = ?', id).order(updated_at: :desc).limit(5)
   end
 end
