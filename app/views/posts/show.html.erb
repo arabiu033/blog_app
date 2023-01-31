@@ -1,6 +1,6 @@
 <section class='posts'>
   <div class='post'>
-    <p>post #<%= @num %> by <%= @user.name %></p>
+    <p><%= @post.title%> by <%= "#{@user.name}" %></p>
     <p>Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%></p>
   </div>
   <p><%= @post.text%></p>
