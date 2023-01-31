@@ -1,5 +1,5 @@
 require 'rails_helper'
-​
+
 RSpec.describe 'User post', type: :system do
   describe 'index page' do
     subject { FactoryGirl.create(:post, author: FactoryGirl.create(:user)) }

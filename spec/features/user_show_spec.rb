@@ -1,5 +1,5 @@
 require 'rails_helper'
-​
+
 RSpec.describe 'User world', type: :system do
   describe 'show page' do
     subject { FactoryGirl.create(:user) }
