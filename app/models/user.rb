@@ -17,5 +17,6 @@ class User < ApplicationRecord
 
   def initialize_post_counter
     self.posts_counter = 0 unless posts_counter
+    self.photo = 'https://images.unsplash.com/photo-1560365163-3e8d64e762ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHNtaWxpbmclMjBmYWNlfGVufDB8fDB8fA%3D%3D&w=1000&q=80'
   end
 end
