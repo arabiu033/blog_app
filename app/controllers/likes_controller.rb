@@ -12,7 +12,7 @@ class LikesController < ApplicationController
 
   def parameters
     para = {}
-    para[:author] = create_user
+    para[:author] = current_user
     para[:post] = Post.find(params[:post_id])
     para
   end
