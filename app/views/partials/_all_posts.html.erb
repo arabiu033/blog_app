@@ -5,7 +5,7 @@
     <p class='num_of_posts'>Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%></p>
     <div>
       <% post.post_comments.each do |comment| %>
-        <p class='comment'><strong><%= comment.author.name%></strong>: <%= comment.text.split(' ')[0] %></p>
+        <p class='comment'><strong><%= comment.author.name%></strong>: <%= comment.text %></p>
       <% end %>
       <div class='btns'>
         <button class='see-posts'><%= link_to "Add a comment", new_user_post_comment_path(@user, post) %></button>

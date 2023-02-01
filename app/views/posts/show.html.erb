@@ -6,7 +6,7 @@
   <p><%= @post.text%></p>
   <div>
     <% @comment.each do |comment| %>
-      <p class='comment'><strong><%= comment.author.name%></strong>: <%= comment.text.split(' ')[0] %></p>
+      <p class='comment'><strong><%= comment.author.name%></strong>: <%= comment%></p>
     <% end %>
   </div>
 </section>
