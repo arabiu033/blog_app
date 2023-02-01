@@ -18,5 +18,4 @@ class User < ApplicationRecord
   def initialize_post_counter
     self.posts_counter = 0 unless posts_counter
   end
-
 end
