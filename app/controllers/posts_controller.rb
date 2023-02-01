@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    p current_user
     @new_post = Post.new(parameters)
     if @new_post.save
       redirect_to users_path, success: 'Post saved successfully'
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
     para = params.require(:post).permit(:title, :text)
     para[:comments_counter] = 0
     para[:likes_counter] = 0
-    para[:author] = create_user
+    para[:author] = current_user
     para
   end
 end
