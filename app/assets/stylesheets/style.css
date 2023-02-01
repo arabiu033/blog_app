@@ -5,6 +5,10 @@ a {
   color: green;
 }
 
+* {
+  /* border: 1px solid red; */
+}
+
 .photo {
   height: 100px;
   object-fit: cover;
@@ -14,11 +18,13 @@ a {
 .bio,
 .posts,
 .btns,
-.see-posts {
+.see-posts,
+.login-links,
+form {
   display: flex;
   padding: 1rem;
   margin: 0 auto;
-  width: 450px;
+  width: 500px;
 }
 
 .num_of_posts {
@@ -36,7 +42,9 @@ a {
 }
 
 .bio,
-.posts {
+.posts,
+.login-links,
+form {
   flex-direction: column;
 }
 
@@ -51,7 +59,8 @@ a {
   line-height: 10px;
 }
 
-.post {
+.post,
+.remember-me {
   display: flex;
 }
 
@@ -63,4 +72,18 @@ a {
 .see-posts {
   width: 200px;
   justify-content: center;
+}
+
+form {
+  gap: 1rem;
+}
+
+form input {
+  width: 100%;
+  padding: 0.4rem;
+}
+
+.remember-me input {
+  width: auto;
+  margin-right: 0.6rem;
 }
