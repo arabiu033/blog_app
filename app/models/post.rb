@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
-  has_many :likes
-  has_many :comments
+  has_many :likes, dependent: :delete_all
+  has_many :comments, dependent: :delete_all
   belongs_to :author, class_name: 'User'
   after_save :update_user_posts_counter
 
@@ -9,11 +9,10 @@ class Post < ApplicationRecord
   validates :likes_counter, presence: true, length: { in: 1..10 }, numericality: { only_integer: true }
 
   def update_user_posts_counter
-    count = Post.where('author_id = ?', author_id).count
-    User.find(author_id).update(posts_counter: count)
+    User.increment_counter(:posts_counter, author_id)
   end
 
   def post_comments
-    Comment.includes(:author, :post).order(updated_at: :desc).limit(5)
+    Comment.includes(:author, :post).where('post_id = ?', id).order(updated_at: :desc).limit(5)
   end
 end

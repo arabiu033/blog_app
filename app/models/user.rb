@@ -3,9 +3,10 @@ class User < ApplicationRecord
   # :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
-  has_many :posts
-  has_many :likes
-  has_many :comments
+         
+  has_many :posts, dependent: :delete_all
+  has_many :likes, dependent: :delete_all
+  has_many :comments, dependent: :delete_all
   after_initialize :initialize_post_counter
 
   validates :name, presence: true, length: { in: 5..30 }
@@ -13,6 +14,10 @@ class User < ApplicationRecord
 
   def user_posts
     Post.where('author_id = ?', id).limit(3)
+  end
+
+  def admin?
+    self.role == 'admin'
   end
 
   def initialize_post_counter
