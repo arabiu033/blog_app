@@ -7,6 +7,7 @@ a {
 
 * {
   /* border: 1px solid red; */
+
 }
 
 .photo {
@@ -51,12 +52,8 @@ form {
 .posts .btns button {
   width: 200px;
   justify-content: center;
-  padding: 0.6rem;
+  padding: 0.7rem;
   color: green;
-}
-
-.comment {
-  line-height: 10px;
 }
 
 .post,
@@ -64,9 +61,9 @@ form {
   display: flex;
 }
 
-.btns,
-.posts {
+.btns {
   justify-content: space-between;
+  align-items: center;
 }
 
 .see-posts {
@@ -86,4 +83,27 @@ form input {
 .remember-me input {
   width: auto;
   margin-right: 0.6rem;
+}
+
+.btns form {
+  width: auto;
+}
+
+.post-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.post-header button {
+  padding: 0 2rem;
+}
+
+.comment-action {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+
+.comment-action button {
+  align-items: center;
 }
