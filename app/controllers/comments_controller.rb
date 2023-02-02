@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource only: :destroy
+
   def new
     @comment = Comment.new
   end

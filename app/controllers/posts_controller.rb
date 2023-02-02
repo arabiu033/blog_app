@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource only: :destroy
+
   def index
     @user = User.find(params[:user_id])
     @posts = Post.includes(:comments, :likes).where('author_id = ?', @user.id)
