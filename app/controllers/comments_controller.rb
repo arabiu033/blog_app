@@ -12,6 +12,11 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    Comment.find(params[:id]).destroy
+    render :new
+  end
+
   private
 
   def parameters

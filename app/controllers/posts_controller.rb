@@ -15,13 +15,18 @@ class PostsController < ApplicationController
   end
 
   def create
-    p current_user
     @new_post = Post.new(parameters)
     if @new_post.save
       redirect_to users_path, success: 'Post saved successfully'
     else
       render :new, notice: 'Error: Post could not be saved'
     end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to users_path, notice: "Deleted post: #{post.title}"
   end
 
   private
