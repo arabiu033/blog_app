@@ -6,7 +6,12 @@
   <p><%= @post.text%></p>
   <div>
     <% @comment.each do |comment| %>
-      <p class='comment'><strong><%= comment.author.name%></strong>: <%= comment%></p>
+      <div class='comment-action'>
+      <p class='comment'><strong><%= comment.author.name%></strong>: <%= comment.text%></p>
+      <% if can? :destroy, comment%>
+        <button class=''><%= link_to "Delete", user_post_comment_path(@user, @post, comment), data: { turbo_method: "delete" } %></button>
+      <% end %>
+    </div>
     <% end %>
   </div>
 </section>
