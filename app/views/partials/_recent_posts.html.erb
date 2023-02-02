@@ -1,6 +1,11 @@
   <%@user.user_posts.each_with_index do |post, i| %>
   <div class='posts'>
-    <p><%= link_to post.title, user_post_path(@user, post) %></p>
+    <div class='post-header'>
+      <p><strong><%= link_to post.title, user_post_path(@user, post) %></strong></p>
+      <% if can? :destroy, post%>
+        <button class='see-posts'><%= link_to "Delete", user_post_path(@user, post), data: { turbo_method: "delete" } %></button>
+      <% end %>
+    </div>
     <p><%= post.text%></p>
     <p class='num_of_posts'>Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%></p>
   </div>

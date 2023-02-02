@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource only: :destroy
+
   def index
     @user = User.find(params[:user_id])
     @posts = Post.includes(:comments, :likes).where('author_id = ?', @user.id)
@@ -15,13 +17,18 @@ class PostsController < ApplicationController
   end
 
   def create
-    p current_user
     @new_post = Post.new(parameters)
     if @new_post.save
       redirect_to users_path, success: 'Post saved successfully'
     else
       render :new, notice: 'Error: Post could not be saved'
     end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to users_path, notice: "Deleted post: #{post.title}"
   end
 
   private

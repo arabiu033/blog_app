@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource only: :destroy
+
   def new
     @comment = Comment.new
   end
@@ -10,6 +12,11 @@ class CommentsController < ApplicationController
     else
       render :new, error: 'Error: Comment could not be saved'
     end
+  end
+
+  def destroy
+    Comment.find(params[:id]).destroy
+    render :new
   end
 
   private
