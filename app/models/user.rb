@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
-         
+
   has_many :posts, dependent: :delete_all
   has_many :likes, dependent: :delete_all
   has_many :comments, dependent: :delete_all
@@ -17,7 +17,7 @@ class User < ApplicationRecord
   end
 
   def admin?
-    self.role == 'admin'
+    role == 'admin'
   end
 
   def initialize_post_counter
