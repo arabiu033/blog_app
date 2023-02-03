@@ -15,4 +15,8 @@ class Post < ApplicationRecord
   def post_comments
     Comment.includes(:author, :post).where('post_id = ?', id).order(updated_at: :desc).limit(5)
   end
+
+  def as_json(_options = {})
+    super(only: %i[id title text likes_counter comments_counter])
+  end
 end

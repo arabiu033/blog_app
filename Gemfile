@@ -45,9 +45,11 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 # Authentication and authorization
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'bcrypt'
 gem 'cancancan'
 gem 'devise'
-
+gem 'jwt'
 # Use Sass to process CSS
 # gem "sassc-rails"
 

@@ -63,7 +63,7 @@ This repo is a simple Blog app website. that will show the list of posts and emp
 </details> -->
 
 <details>
-  <summary>Server</summary>
+  <summary>Framework</summary>
   <ul>
     <li><a href="https://rubyonrails.org/">Rails</a></li>
   </ul>
@@ -205,8 +205,6 @@ Example:
 
 ## 👥 Author <a name="authors"></a>
 
-> Aminu Rabiu
-
 👤 **Aminu Rabiu**
 
 - GitHub: [@arabiu033](https://github.com/arabiu033)
@@ -218,7 +216,7 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> In upcoming weeks I will add some features as mentioned below
+<!-- > In upcoming weeks I will add some features as mentioned below -->
 
 - [ ] **Authentication and Authorization**
 - [ ] **API & Documentation**

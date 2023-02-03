@@ -4,12 +4,22 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = Post.includes(:comments, :likes).where('author_id = ?', @user.id)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
+    end
   end
 
   def show
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     @comment = Comment.includes(:author).where('post_id = ?', @post.id)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @post }
+    end
   end
 
   def new
