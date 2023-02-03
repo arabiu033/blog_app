@@ -1,19 +1,19 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource only: :destroy
-​
+
   def index
     @comments = Comment.where('post_id = ?', params[:post_id])
-​
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @comments }
     end
   end
-​
+
   def new
     @comment = Comment.new
   end
-​
+
   def create
     @comment = Comment.new(parameters)
     if @comment.save
@@ -28,14 +28,14 @@ class CommentsController < ApplicationController
       end
     end
   end
-​
+
   def destroy
     Comment.find(params[:id]).destroy
     render :new
   end
-​
+
   private
-​
+
   def parameters
     para = params.require(:comment).permit(:text)
     para[:author] = current_user
