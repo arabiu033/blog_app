@@ -47,7 +47,9 @@ gem 'bootsnap', require: false
 # Authentication and authorization
 gem 'cancancan'
 gem 'devise'
-
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'jwt'
+gem 'bcrypt'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
